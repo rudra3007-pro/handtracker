@@ -6,7 +6,13 @@ export default defineConfig({
     host: true,
     port: 5173
   },
+  optimizeDeps: {
+    exclude: ['@mediapipe/hands']
+  },
   build: {
-    target: 'esnext'
+    target: 'esnext',
+    rollupOptions: {
+      external: ['@mediapipe/hands']
+    }
   }
 })
